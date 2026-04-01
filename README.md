@@ -143,7 +143,7 @@ cp .env.example .env
 python app.py
 
 # Or use Gunicorn for production
-gunicorn --bind 0.0.0.0:5000 app:app
+gunicorn --worker-class eventlet --workers 1 --bind 0.0.0.0:5000 wsgi:app
 ```
 
 **Backend runs at:** `http://localhost:5000`
