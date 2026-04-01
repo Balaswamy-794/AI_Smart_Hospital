@@ -31,8 +31,9 @@ services:
       - key: CORS_ORIGIN
         value: https://ai-smart-hospital-frontend.onrender.com
 
-  - type: static_site
+  - type: web
     name: ai-smart-hospital-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
